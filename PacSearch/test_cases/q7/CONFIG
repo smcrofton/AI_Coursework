@@ -1,0 +1,3 @@
+class: "NumberPassedQuestion"
+max_points: "17"
+depends: "q4"

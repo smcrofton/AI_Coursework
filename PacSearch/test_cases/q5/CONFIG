@@ -1,0 +1,3 @@
+class: "NumberPassedQuestion"
+max_points: "1"
+depends: "q2"

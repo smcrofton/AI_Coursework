@@ -1,0 +1,11 @@
+When it came to my heuristic for Q7, manhattan distance I think is still a fairly good heuristic for Pacman in general. It works well with the 
+grid system in Pacman, not introducing floating point values, and gives us an admissible value, as well as consistent for each point on the grid.
+The problem with my last solution was simply computation time, since I would have to iterate through every possible food pellet with my recursive
+function. I figured I could still use manhattan distance, but have to make my approach more shallow. I used a Heuristic that focused on the closest
+food and the farthest food from the current state. The heuristic was composed of the cost of the manhattan distance to our closest pellet, added
+with the manhattan distance from the closest pellet to the farthest pellet. The idea being, that if we go to our closest pellet, how far MIGHT
+we have to travel if we can only go to our farthest pellet. This is better than simply going to the closest pellet since the addition of the
+distance between closest and farthest works as sort of an upper-bound for how far we have to move worst case. If we can keep that upper-bound,
+worst case scenario low, we can get a better idea of which closest pellets we should avoid that might get us into a scenario where we might
+have to re-tread a large amount of ground, while also keeping our over-all computation time low since we only have to find two pellet locations
+and two distance costs, rather than a cascading path through every possible pellet. 

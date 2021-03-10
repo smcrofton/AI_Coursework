@@ -1,0 +1,8 @@
+When it came to my heuristic for Q6, I figured manhattan distance should be generally fine. Manhattan distance will always be less than the actual 
+optimal path, and when we are at our goal state, it will also equal zero. The only problem is we can't calculate every possible branching
+path from our current position through every corner, lest we have an extremely high computation time. My solution was to calculate at least
+the total cost of a path if we went to the closest corner, for every corner. This is still better than the actual possible path, and will still
+return zero if we are out of corners. The only problem is that we don't check if a corner that isn't closest to our position has an optimal path,
+but is still better than just picking the next closest corner, since we look at the entirety of our path down the line, making it slightly more
+accurate. My method worked recursively, going down the list of corners, finding the closest corner, then calling itself with the corner it found
+and the list of corners with the corner it found removed from the list, and return the subsequent costs of.
